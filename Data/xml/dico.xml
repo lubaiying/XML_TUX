@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this template
+-->
+
+
+
+<xsi:dictionnaire
+    xmlns='http://myGame/tux/dicoo'
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xsi:schemaLocation='http://myGame/tux/dico ../xsd/dico.xsd'>
+    <xsi:mot niveau="1">Mot</xsi:mot>
+    <xsi:mot niveau="2">Mort</xsi:mot>
+    <xsi:mot niveau="3">Etudes</xsi:mot>
+    <xsi:mot niveau="4">Programme</xsi:mot>
+    <xsi:mot niveau="5">Sérendipité</xsi:mot>
+</xsi:dictionnaire>
+

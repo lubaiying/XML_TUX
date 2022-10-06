@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding='UTF-8'?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           xmlns:tux="http://myGame/tux" version="1.0" 
+           targetNamespace="http://myGame/tux" 
+           elementFormDefault="qualified">
+
+    <xs:element name="dictionnaire" type="tux:Dictionnaire"/>
+    <xs:complexType name="Dictionnaire">
+        <xs:sequence>
+            <xs:element name="mot" type="Mot"/>
+        </xs:sequence>
+        <xs:attribute name="niveau" type="NiveauMot"/>
+    </xs:complexType>
+    
+    <xs:simpleType name="Mot">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Za-z]{3..*}"/>
+            
+        </xs:restriction>
+        
+    </xs:simpleType>
+    
+    <xs:simpleType name="NiveauMot">
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="5"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
