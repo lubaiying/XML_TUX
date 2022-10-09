@@ -13,23 +13,28 @@
             <xs:element name="nom" type="xs:string"/>
             <xs:element name="avatar" type="xs:string"/>
             <xs:element name="anniversaire" type="xs:date"/>
-            <xs:element name="partie" type="Partie"/>
+            <xs:element name="parties" type="tux:Parties"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Parties">
+        <xs:sequence>
+            <xs:element name="partie" type="tux:Partie" minOccurs="1" maxOccurs="unbounded"></xs:element>
         </xs:sequence>
     </xs:complexType>
     
     <xs:complexType name="Partie">
         <xs:sequence>
             <xs:element name="temps" type="xs:double" minOccurs="0" maxOccurs="1"/>
-            <xs:element name="mot" type="Mot"/>  
+            <xs:element name="mot" type="tux:Mot"/>  
         </xs:sequence>
         <xs:attribute name="date" type="xs:date"/>
-        <xs:attribute name="trouvé" type="xs:string" use="optional"/>
-    </xs:complexType>    
-    <xs:complexType name="Mot">
-        <xs:sequence>
-            <xs:element name="mot" type="xs:string"/>
-        </xs:sequence>
-        <xs:attribute name="niveau" type="xs:int"/>
-   </xs:complexType>
-   
+        <xs:attribute name="trouvé" type="tux:Trouvé" use="optional"/>
+    </xs:complexType>   
+
+    <xs:simpleType name="Trouvé">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{1,2}%"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
 </xs:schema>
